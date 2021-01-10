@@ -1,0 +1,46 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Photo Gallery - {{title}}</title>
+  {% else %}
+    <title> Photo Gallery </title>
+  {% endif %}
+  {% block styles %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/basephotos.css' %}" media="screen projection">
+  {% endblock %}
+
+
+</head>
+
+<body>
+   
+      
+    </div>
+
+    
+     
+    </div>
+
+    {% include "navbar.html" %}
+
+    {% block content %} <h1>{{date|date:"l d-F Y"}}</h1> {%endblock%}
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.js"></script>
+     <script src="{% static 'js/scripts.js' %}"></script>
+    {% endblock %}
+
+</body>
+</html>

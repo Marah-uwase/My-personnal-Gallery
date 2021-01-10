@@ -1,0 +1,71 @@
+{% extends 'all_photos/base.html'%}
+
+{% block content %}
+{{block.super}}
+
+
+    <!-- Looping through gallery   -->
+  
+  <div class="jumbotron text-center">
+    <h1 style="padding-top: 85px; font-family: 'Montserrat', sans-serif; font-size: 6em;">Marah's Gallery Collection</h1>
+    <p style="font-family: 'Montserrat', san-serif; font-size:30px;">{{location.country}}</p>
+    <p style="font-family: 'Montserrat', san-serif; font-size:30px; color: brown;">Welcome to my gallery collection
+    </p>
+  </div>
+<div class="container" style="font-family: 'Karla', sans-serif;">
+  <div class="row">
+  {% for photos_item in photos %}
+   <div class="col-md-4">
+          <a href="" data-toggle="modal" data-target="#{{photos_item.id}}"> <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image" height="250" width="250"></a>
+        </div>
+        <div id="{{photos_item.id}}" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+        
+                <div class="modal-content">
+                    <div class="modal-header">
+                    
+                     
+                      <img src="{{photos_item.image.url}}" alt="" id='myImg' height="600" width="680">
+                    </div>
+                    <div class="modal-body">
+                     
+                      <h4 class="modal-title text-center">{{photos_item.name}}</h4>
+                      <p>Description:{{photos_item.description}}</p>
+                      <p> Country:{{photos_item.location.country}} </p>
+                      <p> City: {{photos_item.location.city}}</p>
+                      <button class="btn btn-outline-dark btn-sm" onclick="myFunction"{{image.id}}-url);return false;">Copy URL</button>
+                    </div>
+                  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+              
+              <script type="text/javascript">
+                function myFunction() {
+                   /* Get the text field */
+                   var copyText = document.getElementById("{{image.id}}-url");
+                   /* Select the text field */
+                   copyText.select();
+                   /* Copy the text inside the text field */
+                   document.execCommand("copy");
+                   /* Alert the copied text */
+                   alert("Copied the text: " + copyText.value);
+                }
+                </script>
+            
+           
+  
+  
+
+
+     
+  {% endfor %}
+</div>
+</div>   
+  
+  
+{% endblock %}

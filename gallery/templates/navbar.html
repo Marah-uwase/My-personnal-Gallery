@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div style="position:fixed; width: 100%; top: 0; z-index:1;" role="navigation" >
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
+        <a class="navbar-brand font-weight-bold" href="{% url 'photosToday' %}">MARAH'S GALLERY COLLECTION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/admin">Admin Login</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Locations
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {%for location in locations %}
+                <a class="dropdown-item" href="{% url 'location' location.id %}">{{location}}</a>
+                  {% endfor %}
+            </li>
+            
+          </ul>
+          <div class="col-sm-4 col-md-4 navbar-right">
+              <form action="{% url 'search_results' %}" class="navbar-form" role="search">
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search Image" name="image">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </nav>
+</div>
+</body>
+</html>

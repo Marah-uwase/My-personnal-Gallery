@@ -1,0 +1,67 @@
+{%extends 'all_photos/base.html'%}
+
+{% block content %}
+
+    <div class="jumbotron text-center">
+        <h1 style="padding-top: 85px; font-family: 'Montserrat', sans-serif; font-size: 6em;">Marah's Gallery connection</h1>
+        <p style="font-family: 'Montserrat', san-serif; font-size:30px;; text-transform:capitalize">The location is: {{location.country}}</p>
+    </div>
+    <div class="container" style="font-family: 'Karla', sans-serif;">
+        <div class="row">
+           {% for image in images %}
+           <div class="col-md-4">
+              <a href="{{image.image.url}}" data-fancybox="images" data-buttons='["zoom","slideShow","fullScreen","thumbs","share","close"]'
+              data-caption='
+                 <p>
+                    {% for category in image.category.all %}
+                    <span class="btn btn-outline-light btn-sm" style="font-size:1em;">{{category}}</span>
+                    {% endfor %}
+                 </p>
+                 <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModalCenter">
+                       More Info
+                     </button>
+     
+                     <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                       <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                                <div class="modal-header">
+                                   <h5 class="modal-title font-weight-bold text-dark" id="exampleModalLongTitle">{{image.name}}</h5>
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                   </button>
+                                </div>
+                              
+                              <div class="modal-body">
+                                <p class = "text-dark text-left" >{{image.description}}</p>
+                              </div>
+                             <div class="modal-footer">
+                                <input class="form-control input-sm" type="textarea"  value="" id="{{image.id}}-url" >
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-dismiss="modal">Close</button>
+                                <button class="btn btn-outline-dark btn-sm" onclick="myFunction("{{image.id}}-url);return false;">Copy URL</button>
+                              </div>
+                          </div>
+                       </div>
+                     </div>
+              '>
+                 <img src="{{image.image.url}}" alt="" class="img-fluid mb-4 pb-1">
+               </a>
+           </div>
+     
+           <script type="text/javascript">
+              function myFunction() {
+                 /* Get the text field */
+                 var copyText = document.getElementById("{{image.id}}-url");
+     
+                 /* Select the text field */
+                 copyText.select();
+     
+                 /* Copy the text inside the text field */
+                 document.execCommand("copy");
+     
+                 /* Alert the copied text */
+                 alert("Copied the text: " + copyText.value);
+              }
+              </script>
+    {% endfor %}
+{% endblock %}
