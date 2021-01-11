@@ -8,4 +8,4 @@ $("[data-fancybox]").fancybox({
       $('.fancybox-placeholder').css('padding', '');
       // fancybox is closed, run myOtherFunct()
     }
-  })
+  });
