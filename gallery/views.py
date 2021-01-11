@@ -5,6 +5,9 @@ from .models import Image,Location,Category
 
 
 # Create your views here.
+def welcome(request):
+    return render(request, 'welcome.html')
+
 def photos_of_day(request):
     date = dt.date.today()
     photos = Image.objects.all()
