@@ -9,7 +9,7 @@ def photos_of_day(request):
     date = dt.date.today()
     photos = Image.objects.all()
     locations = Location.objects.all()
-    category = Category.objects.all()
+     Category.objects.all()
    
     # elif 'category' in request.GET and request.GET['category']:
     #     cat = request.GET.get('categories')
