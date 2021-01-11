@@ -15,7 +15,7 @@ class Category(models.Model):
     def __str__(self):
         return self.category    
 
-class Image(models.Model):
+class Imag(models.Model):
     image=models.ImageField(upload_to = 'images/')
     name = models.CharField(max_length =30)
     description = models.TextField(max_length =30)
