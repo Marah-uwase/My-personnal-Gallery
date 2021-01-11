@@ -21,7 +21,7 @@ def photos_of_day(request):
       
     return render(request, 'all_photos/today_photos.html', {"date": date, "photos": photos, "locations": locations})      
 
-def search_results(request):
+def search_result(request):
     '''
     search function to display search search_results
     args:
