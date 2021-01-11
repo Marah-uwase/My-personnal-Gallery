@@ -28,8 +28,8 @@ class CategoryTest(TestCase):
 
 class LocationTest(TestCase):
     def setUp(self):
-        self.rwanda = Location(country='Belgique')
+        self.belgique = Location(country='Belgique')
 
     def test_instance(self):
-        self.rwanda.save()
+        self.belgique.save()
         self.assertTrue(isinstance(self.belgique, Location))    
