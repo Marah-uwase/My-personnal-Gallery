@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+h1{
+    color:lightgrey;
+    text-align:center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+ 
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+div.scrollmenu {
+  background-color: #f8f9fa;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: grey;
+  text-align: center;
+  padding: 4px 30px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+div.scrollmenu a:hover {
+  color: black;
+}
+
+.image {
+  max-width: 850px!important;
+}
+/* .jumbotron {
+  background-image: url(../images/johannes-plenio-247177-unsplash.jpg);
+  color: #ffffff;
+  height: 500px;
+  width: 100%;
+  border-radius: 0;
+} */
+
+.navbar {
+  color: #3d7aaf;
+}   
+
+.nav-colored { background-color:#000; }
+.nav-transparent { background-color:transparent;}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+.location-heading {
+  color: #3d7aaf;
+}
+
+
+.border-light{
+  border-style: solid;
+  overflow: hidden;
+}
