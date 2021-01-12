@@ -1,0 +1,4 @@
+virtual/
+__pscache__/
+
+*.pyc
