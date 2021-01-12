@@ -37,4 +37,4 @@ this is a personal gallery of photos
     By Maranatha Uwase
 
 # License
-    MIT Copyright (c) 2019 Umutoniwase Nancy
+    MIT Copyright (c) 2021 Maranatha Uwase
