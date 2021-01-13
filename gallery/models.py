@@ -10,10 +10,10 @@ class Location(models.Model):
     def save_category(self):
         self.save()
 
-class Category(models.Model):
+class category(models.Model):
     name = models.CharField(max_length =30) 
     def __str__(self):
-        return self.category    
+        return self.name    
 
 class Image(models.Model):
     image=models.ImageField(upload_to = 'images/')
@@ -21,7 +21,7 @@ class Image(models.Model):
     description = models.TextField(max_length =30)
     pub_date = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE,)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE,)
+    category = models.ForeignKey(category, on_delete=models.CASCADE,)
     def __str__(self):
         return self.name
     def save_image(self):

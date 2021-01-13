@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-from decouple import config,Csv
+from decouple import config
 from pathlib import Path
 
 
@@ -37,8 +37,8 @@ ALLOWED_HOSTS = ['.localhost', '.herokuapp.com', '.127.0.0.1']
 
 INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
-    # 'bootstrap3',
-    # 'bootstrap4',
+    'bootstrap3',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,20 +82,20 @@ WSGI_APPLICATION = 'myGallery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'USER': 'maranatha',
-#     'PASSWORD':'marah31998',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'USER': 'maranatha',
+    'PASSWORD':'marah31998',
+    }
+}
 
- DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
+# DATABASES = {
+#        'default': dj_database_url.config(
+#            default=config('DATABASE_URL')
+#        )
+#    }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

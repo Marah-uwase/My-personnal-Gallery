@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 import datetime as dt
-from .models import Image,Location,Category
+from .models import Image,Location,category
 
 
 # Create your views here.
@@ -12,7 +12,7 @@ def photos_of_day(request):
     date = dt.date.today()
     photos = Image.objects.all()
     locations = Location.objects.all()
-    category = Category.objects.all()
+    # category = category.objects.all()
    
     # elif 'category' in request.GET and request.GET['category']:
     #     cat = request.GET.get('categories')
