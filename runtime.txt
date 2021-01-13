@@ -1,2 +1,2 @@
 runtime.txt
-Python-3.6.12
+Python-3.6.9
